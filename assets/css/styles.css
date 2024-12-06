@@ -103,6 +103,8 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin: auto;
+    max-height: 580px;
+    max-width: 380px;
 }
 
 .card img {
@@ -113,6 +115,7 @@ main {
 
 .card-body {
     padding: 1em;
+    height: 200px;
 }
 
 .card-title {
