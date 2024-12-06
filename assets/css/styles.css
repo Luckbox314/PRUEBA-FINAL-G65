@@ -1,0 +1,205 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: grid;
+    font-family: "Nunito Sans", serif;   
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "nav"
+        "filters"
+        "main"
+        "footer";
+    min-height: 100vh;
+}
+
+/* Menú de navegación */
+
+nav {
+    background-color: black;
+    height: 70px;
+    grid-area: nav;
+    margin: 0;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo-titulo {
+    display: flex;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 25px;
+    color: white;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding: 0.6em 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #6A200D;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+/* seccion main */
+
+.main-header {
+    grid-area: filters;
+    background-color: #0a0a0a;
+    padding: 1em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.main-header select {
+    font-size: 15px;
+    padding: 0.5em;
+    border: 1px solid #0a0a0a;
+    border-radius: 25px;
+    background-color: #272727;
+    color: white;
+    cursor: pointer;
+}
+
+main {
+    grid-area: main;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+    background-color: #131111;
+}
+
+/* tarjetas */
+
+.card {
+    border: 1px solid #131111;
+    border-radius: 10px;
+    width: 90%;
+    background-color: #0a0a0a;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1em;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #ffffff;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 1em;
+}
+
+.card .btn {
+    background-color: #6A200D;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.card .btn:hover {
+    background-color: #4b1608;
+}
+
+/* footer */
+
+footer {
+    grid-area: footer;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #6A200D;
+    font-size: 1rem; 
+}
+
+footer ul li a:hover {
+    color: #FF5733;
+}
+
+/* responsivo */
+
+@media (max-width: 576px) {
+    nav ul {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .menu-mobile.active {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    nav li {
+        padding: 1em;
+        text-align: center;
+    }
+
+    .main-header {
+        justify-content: center;
+    }
+}
